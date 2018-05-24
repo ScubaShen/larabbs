@@ -18,4 +18,9 @@ class TopicObserver
     {
         //
     }
+
+    public function saving(Topic $topic)  // Topic 模型保存时會触发 saving 事件
+    {
+        $topic->excerpt = make_excerpt($topic->body);
+    }
 }
