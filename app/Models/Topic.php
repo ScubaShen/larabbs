@@ -7,6 +7,11 @@ class Topic extends Model
     //protected $fillable = ['title', 'body', 'user_id', 'category_id', 'reply_count', 'view_count', 'last_reply_user_id', 'order', 'excerpt', 'slug'];
     protected $fillable = ['title', 'body', 'category_id', 'excerpt', 'slug'];  //fillable裡面是用戶可以改的自段
 
+    public function replies()  //一篇帖子下有多条回复
+    {
+        return $this->hasMany(Reply::class);
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class);
