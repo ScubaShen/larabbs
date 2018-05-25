@@ -2,40 +2,12 @@
 
 namespace App\Http\Requests;
 
-class ReplyRequest extends Request
+class ReplyRequest extends Request  //表单验证类
 {
     public function rules()
     {
-        switch($this->method())
-        {
-            // CREATE
-            case 'POST':
-            {
-                return [
-                    // CREATE ROLES
-                ];
-            }
-            // UPDATE
-            case 'PUT':
-            case 'PATCH':
-            {
-                return [
-                    // UPDATE ROLES
-                ];
-            }
-            case 'GET':
-            case 'DELETE':
-            default:
-            {
-                return [];
-            };
-        }
-    }
-
-    public function messages()
-    {
         return [
-            // Validation messages
+            'content' => 'required|min:2',
         ];
     }
 }
