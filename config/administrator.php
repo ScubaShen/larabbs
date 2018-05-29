@@ -49,6 +49,7 @@ return array(
         ],
         '站点管理' => [
             'settings.site',
+            'links',  //边栏资源推荐
         ],
     ],
 

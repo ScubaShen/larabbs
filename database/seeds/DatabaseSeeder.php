@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(TopicsTableSeeder::class);  // topics 要在 replys 前面
 		$this->call(ReplysTableSeeder::class);
+        $this->call(LinksTableSeeder::class);
     }
 }
